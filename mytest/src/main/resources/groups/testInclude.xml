@@ -1,0 +1,22 @@
+<suite name="testNgSuite" >
+    <test name="Test include and exclude">
+        <groups>
+            <define name="csp">
+                <include name="robustness" />
+                <include name="stability" />
+            </define>
+            <run>
+                <include name="robustness" />
+<!--                 <exclude name="csp" /> -->
+            </run>
+        </groups>
+        <classes>
+            <class name="testng.include.MyInclude" >
+                <methods>
+<!--                     <include name="testExclude" /> -->
+<!--                     <exclude name="testExclude" /> -->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

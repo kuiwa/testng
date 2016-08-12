@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [TestNgSuite]">
-  <test name="Test Groups">
+<suite name="Failed suite [testNgSuite]">
+  <test name="Test include and exclude">
     <groups>
+      <define name="csp">
+        <include name="robustness"/>
+        <include name="stability"/>
+      </define> <!-- csp -->
       <run>
-        <include name="group2"/>
+        <include name="robustness"/>
       </run>
     </groups>
     <classes>
-      <class name="testng.groups.MyTest">
-        <parameter name="group1A" value="group1A"/>
-        <parameter name="property2" value="syspro2"/>
-        <parameter name="property1" value="syspro1"/>
-      </class> <!-- testng.groups.MyTest -->
-      <class name="testng.groups.MyTestB"/>
+      <class name="testng.include.MyInclude"/>
     </classes>
-  </test> <!-- Test Groups -->
-</suite> <!-- Failed suite [TestNgSuite] -->
+  </test> <!-- Test include and exclude -->
+</suite> <!-- Failed suite [testNgSuite] -->

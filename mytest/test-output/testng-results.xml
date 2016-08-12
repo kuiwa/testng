@@ -1,44 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" total="0" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="TestNgSuite" duration-ms="90" started-at="2016-08-12T02:19:15Z" finished-at="2016-08-12T02:19:15Z">
+  <suite name="testNgSuite" duration-ms="6" started-at="2016-08-12T08:43:05Z" finished-at="2016-08-12T08:43:05Z">
     <groups>
-      <group name="group3">
-        <method signature="MyTest.testGroup1A(java.lang.String)[pri:0, instance:testng.groups.MyTest@3c4f4458]" name="testGroup1A" class="testng.groups.MyTest"/>
-      </group> <!-- group3 -->
-      <group name="group4">
-        <method signature="MyTestB.testB2()[pri:0, instance:testng.groups.MyTestB@52e99642]" name="testB2" class="testng.groups.MyTestB"/>
-      </group> <!-- group4 -->
-      <group name="group2">
-        <method signature="MyTestB.testB1()[pri:0, instance:testng.groups.MyTestB@52e99642]" name="testB1" class="testng.groups.MyTestB"/>
-        <method signature="MyTest.testGroup1A(java.lang.String)[pri:0, instance:testng.groups.MyTest@3c4f4458]" name="testGroup1A" class="testng.groups.MyTest"/>
-      </group> <!-- group2 -->
     </groups>
-    <test name="Test Groups" duration-ms="90" started-at="2016-08-12T02:19:15Z" finished-at="2016-08-12T02:19:15Z">
-      <class name="testng.groups.MyTest">
-        <test-method status="PASS" signature="testGroup1A(java.lang.String)[pri:0, instance:testng.groups.MyTest@3c4f4458]" name="testGroup1A" duration-ms="10" depends-on-groups="group4" started-at="2016-08-12T10:19:15Z" finished-at="2016-08-12T10:19:15Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[group1A]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGroup1A -->
-      </class> <!-- testng.groups.MyTest -->
-      <class name="testng.groups.MyTestB">
-        <test-method status="PASS" signature="testB1()[pri:0, instance:testng.groups.MyTestB@52e99642]" name="testB1" duration-ms="50" started-at="2016-08-12T10:19:15Z" finished-at="2016-08-12T10:19:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testB1 -->
-        <test-method status="PASS" signature="testB2()[pri:0, instance:testng.groups.MyTestB@52e99642]" name="testB2" duration-ms="0" started-at="2016-08-12T10:19:15Z" finished-at="2016-08-12T10:19:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testB2 -->
-      </class> <!-- testng.groups.MyTestB -->
-    </test> <!-- Test Groups -->
-  </suite> <!-- TestNgSuite -->
+    <test name="Test include and exclude" duration-ms="6" started-at="2016-08-12T08:43:05Z" finished-at="2016-08-12T08:43:05Z">
+    </test> <!-- Test include and exclude -->
+  </suite> <!-- testNgSuite -->
 </testng-results>
