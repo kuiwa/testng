@@ -16,4 +16,5 @@
             <class name="testng.groups.MyTestB" />
         </classes>
     </test>
+    
 </suite>

@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-TestNgSuite">
-                    <span>C:\Users\EKUIWAG\git\java\mytest\src\main\resources\groups\testGroups.xml</span>
+                    <span>C:\git\testng\mytest\src\main\resources\groups\testGroups.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -130,22 +130,6 @@
           <div class="suite-TestNgSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">testng.groups.MyTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testGroup1A(group1A)">
-                  </a> <!-- testGroup1A(group1A) -->
-                  <span class="method-name">testGroup1A</span>
-                  <span class="parameters">(group1A)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-TestNgSuite-class-passed -->
-          <div class="suite-TestNgSuite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
               <span class="class-name">testng.groups.MyTestB</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -165,10 +149,26 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-TestNgSuite-class-passed -->
+          <div class="suite-TestNgSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">testng.groups.MyTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGroup1A(group1A)">
+                  </a> <!-- testGroup1A(group1A) -->
+                  <span class="method-name">testGroup1A</span>
+                  <span class="parameters">(group1A)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-TestNgSuite-class-passed -->
         </div> <!-- panel TestNgSuite -->
         <div panel-name="test-xml-TestNgSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\EKUIWAG\git\java\mytest\src\main\resources\groups\testGroups.xml</span>
+            <span class="header-content">C:\git\testng\mytest\src\main\resources\groups\testGroups.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -183,9 +183,9 @@
     &lt;/groups&gt;
     &lt;classes&gt;
       &lt;class name=&quot;testng.groups.MyTest&quot;&gt;
-        &lt;parameter name=&quot;group1A&quot; value=&quot;group1A&quot;/&gt;
         &lt;parameter name=&quot;property2&quot; value=&quot;syspro2&quot;/&gt;
         &lt;parameter name=&quot;property1&quot; value=&quot;syspro1&quot;/&gt;
+        &lt;parameter name=&quot;group1A&quot; value=&quot;group1A&quot;/&gt;
       &lt;/class&gt; &lt;!-- testng.groups.MyTest --&gt;
       &lt;class name=&quot;testng.groups.MyTestB&quot;/&gt;
     &lt;/classes&gt;
@@ -293,11 +293,11 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">testng.groups.MyTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">testProperty</span>
+                <span class="ignored-method-name">testGroup1B</span>
                 <br/>
                 <span class="ignored-method-name">testGroup1C</span>
                 <br/>
-                <span class="ignored-method-name">testGroup1B</span>
+                <span class="ignored-method-name">testProperty</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -316,7 +316,7 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testB2</span>
-                <span class="method-start">50 ms</span>
+                <span class="method-start">60 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
