@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestNgSuite" parallel="false" thread-count="1">
+    
+    <test name="Test Groups">
+        <groups>
+            <run>
+                <include name="group2" />
+            </run>
+        </groups>
+        <classes>
+            <class name="testng.groups.MyTest">
+                <parameter name="group1A" value="group1A" />
+                <parameter name="property1" value="syspro1" />
+                <parameter name="property2" value="syspro2" />
+            </class>
+            <class name="testng.groups.MyTestB" />
+        </classes>
+    </test>
+</suite>
