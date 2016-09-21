@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestNGSuite" >
+    <test name="Test dataProvider" >
+        <classes>
+            <class name="testng.dataprovider.MyTest" >
+                <methods>
+                    <exclude name="verifyData1" />
+                    <include name="verifyData2" />
+                </methods>
+            </class> 
+        </classes>
+    </test>
+</suite>

@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [testNgSuite]">
-  <test name="Test include and exclude">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [testNgSuite]">
+  <listeners>
+    <listener class-name="testng.listener.TmpSuiteListener"/>
+  </listeners>
+  <test name="Test dependencies">
     <groups>
-      <define name="csp">
-        <include name="robustness"/>
-        <include name="stability"/>
-      </define> <!-- csp -->
       <run>
-        <include name="robustness"/>
+        <include name="group7"/>
       </run>
+      <dependencies>
+        <group depends-on="group5 group6" name="group7"/>
+        <group depends-on="group2 group4" name="group5"/>
+      </dependencies>
     </groups>
     <classes>
-      <class name="testng.include.MyInclude"/>
+      <class name="testng.groups.MyTestB"/>
     </classes>
-  </test> <!-- Test include and exclude -->
+  </test> <!-- Test dependencies -->
 </suite> <!-- Failed suite [testNgSuite] -->

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Log4jSuite]">
+  <test name="Test log4j">
+    <classes>
+      <class name="myLog4j.MyConversionPatternTestModule">
+        <methods>
+          <include name="testModule"/>
+        </methods>
+      </class> <!-- myLog4j.MyConversionPatternTestModule -->
+    </classes>
+  </test> <!-- Test log4j -->
+</suite> <!-- Failed suite [Log4jSuite] -->

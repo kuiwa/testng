@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Log4jSuite" >
+    <test name="Test log4j" >
+        <classes>
+            <class name="myLog4j.MyConversionPatternTestModule" >
+                <methods>
+                    <include name="testModule" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

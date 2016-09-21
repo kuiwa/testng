@@ -23,4 +23,32 @@ public class MyTestB{
 //        Assert.assertTrue(false);
         Logger.printEnd();
     }
+
+    @Test(groups = {"group5"})
+    public void testGroup5() {
+        methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
+        Logger.print("This is " + name[name.length - 1] + "." +  methodName);
+        Logger.printEnd();
+    }
+
+    @Test(groups = {"group6"})
+    public void testGroup6() {
+        methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
+        Logger.print("This is " + name[name.length - 1] + "." +  methodName);
+        Logger.printEnd();
+    }
+
+    @Test(groups = {"group7"})
+    public void testGroup7() {
+        methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
+        Logger.print("This is " + name[name.length - 1] + "." +  methodName);
+        Logger.printEnd();
+    }
+
+    @Test(groups = {"group8"})
+    public void testGroup8() {
+        methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
+        Logger.print("This is " + name[name.length - 1] + "." +  methodName);
+        Logger.printEnd();
+    }
 }

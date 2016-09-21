@@ -1,0 +1,719 @@
+
+<beans
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+    xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans">
+
+    
+<!-- no config -->
+    <bean id="KISTP1347" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.StpResource">
+        <property name="site" value="seki" />
+        <property name="g2RbsList" ref="kistp1347_node" />
+        <property name="abiscoList" ref="ylufte002" />
+        <property name="siteData" ref="Kista_House10" />
+    </bean>      
+
+    <bean id="kistp1347_node" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.G2RbsResource">
+        <property name="eNodeBData" ref="kistp1347_node-g2multirat-g2enodeb" />
+        <property name="btsData" ref="kistp1347-btsData" />
+<!--         <property name="digitalUnits" ref="kistp1347_node-DUG" /> -->
+        <property name="host" value="10.67.64.57" />
+        <property name="username" value="expert" />
+        <property name="password" value="expert" />
+        <property name="coliUsername" value="expert" />
+        <property name="coliPassword" value="expert" />
+        <property name="coliPort" value="4192" />
+        <property name="coliRegexPrompt" value="coli \[.*\]-&gt;" />
+        <property name="comCliUsername" value="expert" />
+        <property name="comCliPassword" value="expert" />
+        <property name="comCliPort" value="2023" />
+        <property name="comCliRegexPrompt" value=".*&gt;" />
+        <property name="linuxUsername" value="expert" />
+        <property name="linuxPassword" value="expert" />
+        <property name="linuxPort" value="22" />
+        <property name="linuxRegexPrompt" value="\S+@\S+:\S+#" />
+        <property name="linuxShellAvailable" value="true" />
+        <property name="netconfUsername" value="expert" />
+        <property name="netconfPassword" value="expert" />
+        <property name="netconfPort" value="2022" />
+<!--         <property name="moshellResource" ref="kistp1347_node-moshell" /> -->
+        <property name="radioUnits">
+            <list>
+                <ref bean="Kistp1347_RU1" />
+                <ref bean="Kistp1347_RU2" />
+                <ref bean="Kistp1347_RU3" />
+                <ref bean="Kistp1347_RU4" />
+                <ref bean="Kistp1347_RU5" />
+                <ref bean="Kistp1347_RU6" />
+                <ref bean="Kistp1347_RU7" />
+                <ref bean="Kistp1347_RU8" />
+                <ref bean="Kistp1347_RU9" />
+                <ref bean="Kistp1347_RU10" />
+                <ref bean="Kistp1347_RU11" />
+                <ref bean="Kistp1347_RU12" />
+                <ref bean="Kistp1347_RU13" />
+                <ref bean="Kistp1347_RU14" />
+                <ref bean="Kistp1347_RU15" />
+            </list>
+        </property>
+        <property name="cells">
+            <list>
+                <ref bean="Kistp1347_Cell1" />
+                <ref bean="Kistp1347_Cell2" />
+                <ref bean="Kistp1347_Cell3" />
+                <ref bean="Kistp1347_Cell4" />
+                <ref bean="Kistp1347_Cell5" />
+                <ref bean="Kistp1347_Cell6" />
+                <ref bean="Kistp1347_Cell7" />
+                <ref bean="Kistp1347_Cell8" />
+                <ref bean="Kistp1347_Cell9" />
+                <ref bean="Kistp1347_Cell10" />
+                <ref bean="Kistp1347_Cell11" />
+                <ref bean="Kistp1347_Cell12" />
+            </list>
+        </property>
+        <property name="digitalUnits">
+        <list>
+            <ref bean="KIDUS1347" />
+        </list>
+    </property>
+    </bean>
+
+    <bean id="kistp1347_node-DUG" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.DigitalUnitResource">
+    </bean>
+
+    <bean id="kistp1347_node-moshell" class="MoshellResource">
+        <property name="sshResource" ref="kistp1347_node-LiMoshellssh" />
+    </bean>
+
+    <bean id="kistp1347_node-LiMoshellssh" class="SshResource">
+        <property name="host" value="selilsx320.lmera.ericsson.se" />
+        <property name="username" value="atelteadm" />
+        <property name="password" value="$(ATELTEADM_PW)" />
+        <property name="expectedRegexPrompt" value="selilsx320.*&gt;" />
+        <property name="port" value="22" />
+    </bean>
+    
+    <bean id="kistp1347_node-g2multirat-g2enodeb" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.G2ENodeBDataResource">
+<!--         <property name="ipTransmissionConfiguration" ref="stp-g2multirat-enodebiptransmissionconfiguration" /> -->
+         <property name="ipTransmissionConfiguration" ref="ENodeBIpTransmissionConfigurationTass-LTE/IP" />        
+        <property name="cells">
+            <list>
+                <ref bean="Kistp1347_Cell1" />
+                <ref bean="Kistp1347_Cell2" />
+                <ref bean="Kistp1347_Cell3" />
+                <ref bean="Kistp1347_Cell4" />
+                <ref bean="Kistp1347_Cell5" />
+                <ref bean="Kistp1347_Cell6" />
+                <ref bean="Kistp1347_Cell7" />
+                <ref bean="Kistp1347_Cell8" />
+                <ref bean="Kistp1347_Cell9" />
+                <ref bean="Kistp1347_Cell10" />
+                <ref bean="Kistp1347_Cell11" />
+                <ref bean="Kistp1347_Cell12" />
+            </list>
+        </property>
+        <property name="digitalUnits">
+        <list>
+            <ref bean="KIDUS1347" />
+        </list>
+        </property>
+<!--         <property name="ipTransmissionConfiguration" ref="ENodeBIpTransmissionConfigurationTass-LTE/IP" /> -->
+    </bean>
+
+
+    <bean id="kistp1347_node-g2multirat-enodebiptransmissionconfiguration"
+        class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.ENodeBIpTransmissionConfigurationResource">
+        <property name="ipHostLink">
+            <bean class="IpAddressResource">
+                <property name="ip" value="10.67.64.57" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="Kistp1347_RU5" class="RadioUnitResource">
+        <property name="radioStandard" value="UNKNOWN" />
+        <property name="serialNumber" value="C827901274" />
+    </bean>
+
+    <bean id="Kistp1347_RU6" class="RadioUnitResource">
+        <property name="radioStandard" value="UNKNOWN" />
+        <property name="serialNumber" value="C827901274" />
+    </bean>
+
+    <bean id="Kistp1347_RU7" class="RadioUnitResource">
+        <property name="radioStandard" value="UNKNOWN" />
+        <property name="serialNumber" value="C827901274" />
+    </bean>
+
+    <bean id="Kistp1347_RU2" class="RadioUnitResource">
+        <property name="radioStandard" value="UNKNOWN" />
+        <property name="serialNumber" value="C827901274" />
+    </bean>
+
+    <bean id="Kistp1347_RU8" class="RadioUnitResource">
+        <property name="radioStandard" value="UNKNOWN" />
+        <property name="serialNumber" value="C827901274" />
+    </bean>
+
+    <bean id="Kistp1347_RU9" class="RadioUnitResource">
+        <property name="radioStandard" value="UNKNOWN" />
+        <property name="serialNumber" value="C827901274" />
+    </bean>
+
+    <bean id="Kistp1347_RU4" class="RadioUnitResource">
+        <property name="radioStandard" value="UNKNOWN" />
+        <property name="serialNumber" value="C827901274" />
+    </bean>
+
+    <bean id="Kistp1347_RU3" class="RadioUnitResource">
+        <property name="radioStandard" value="UNKNOWN" />
+        <property name="serialNumber" value="C827901274" />
+    </bean>
+
+    <bean id="Kistp1347_RU14" class="RadioUnitResource">
+        <property name="radioStandard" value="UNKNOWN" />
+        <property name="serialNumber" value="C828134792" />
+    </bean>
+
+    <bean id="Kistp1347_RU15" class="RadioUnitResource">
+        <property name="radioStandard" value="UNKNOWN" />
+        <property name="serialNumber" value="D16L595724" />
+    </bean>
+
+    <bean id="Kistp1347_RU1" class="RadioUnitResource">
+        <property name="radioStandard" value="UNKNOWN" />
+        <property name="serialNumber" value="C827901274" />
+    </bean>
+
+    <bean id="Kistp1347_RU10" class="RadioUnitResource">
+        <property name="radioStandard" value="UNKNOWN" />
+        <property name="serialNumber" value="C827901274" />
+    </bean>
+
+    <bean id="Kistp1347_RU11" class="RadioUnitResource">
+        <property name="radioStandard" value="UNKNOWN" />
+        <property name="serialNumber" value="C827901274" />
+    </bean>
+
+    <bean id="Kistp1347_RU12" class="RadioUnitResource">
+        <property name="radioStandard" value="UNKNOWN" />
+        <property name="serialNumber" value="C827901274" />
+    </bean>
+
+    <bean id="Kistp1347_RU13" class="RadioUnitResource">
+        <property name="radioStandard" value="UNKNOWN" />
+        <property name="serialNumber" value="D16L516787" />
+    </bean>
+
+    <bean id="Kistp1347_Cell1" class="ENodeBCellResource">
+        <property name="bandwidthDl" value="20000" />
+        <property name="bandwidthUl" value="20000" />
+        <property name="earfcnDl" value="1561" />
+        <property name="earfcnUl" value="19561" />
+        <property name="cellIdGroup" value="10" />
+        <property name="globalCellId" value="30" />
+        <property name="localCellId" value="1" />
+        <property name="subCellId" value="0" />
+        <property name="sectorNumber" value="1" />
+        <property name="carrierNumber" value="1" />
+        <property name="simulated" value="true" />
+        <property name="cellTagList">
+            <list>
+                <value>AEROFLEX_MUE</value>
+                <value>HOIT_INTRA_ORIG</value>
+                <value>CELL1</value>
+                <value>UETPTCELL</value>
+                <value>CELLTPTCELL</value>
+                <value>MUELACCELL</value>
+                <value>UETPTUE</value>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="Kistp1347_Cell2" class="ENodeBCellResource">
+        <property name="bandwidthDl" value="20000" />
+        <property name="bandwidthUl" value="20000" />
+        <property name="earfcnDl" value="1450" />
+        <property name="earfcnUl" value="19450" />
+        <property name="cellIdGroup" value="10" />
+        <property name="globalCellId" value="31" />
+        <property name="localCellId" value="2" />
+        <property name="subCellId" value="1" />
+        <property name="sectorNumber" value="2" />
+        <property name="carrierNumber" value="2" />
+        <property name="simulated" value="true" />
+        <property name="cellTagList">
+            <list>
+                <value>AEROFLEX_MUE</value>
+                <value>HOIT_INTRA_ORIG</value>
+                <value>CELL1</value>
+                <value>UETPTCELL</value>
+                <value>CELLTPTCELL</value>
+                <value>MUELACCELL</value>
+                <value>UETPTUE</value>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="Kistp1347_Cell3" class="ENodeBCellResource">
+        <property name="bandwidthDl" value="20000" />
+        <property name="bandwidthUl" value="20000" />
+        <property name="earfcnDl" value="2900" />
+        <property name="earfcnUl" value="20900" />
+        <property name="cellIdGroup" value="10" />
+        <property name="globalCellId" value="32" />
+        <property name="localCellId" value="3" />
+        <property name="subCellId" value="2" />
+        <property name="sectorNumber" value="3" />
+        <property name="carrierNumber" value="3" />
+        <property name="simulated" value="true" />
+        <property name="cellTagList">
+            <list>
+                <value>AEROFLEX_MUE</value>
+                <value>HOIT_INTRA_ORIG</value>
+                <value>CELL1</value>
+                <value>UETPTCELL</value>
+                <value>CELLTPTCELL</value>
+                <value>MUELACCELL</value>
+                <value>UETPTUE</value>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="Kistp1347_Cell4" class="ENodeBCellResource">
+        <property name="bandwidthDl" value="20000" />
+        <property name="bandwidthUl" value="20000" />
+        <property name="earfcnDl" value="1761" />
+        <property name="earfcnUl" value="19761" />
+        <property name="cellIdGroup" value="11" />
+        <property name="globalCellId" value="33" />
+        <property name="localCellId" value="4" />
+        <property name="subCellId" value="0" />
+        <property name="sectorNumber" value="4" />
+        <property name="carrierNumber" value="4" />
+        <property name="simulated" value="true" />
+        <property name="cellTagList">
+            <list>
+                <value>AEROFLEX_MUE</value>
+                <value>HOIT_INTRA_ORIG</value>
+                <value>CELL1</value>
+                <value>UETPTCELL</value>
+                <value>CELLTPTCELL</value>
+                <value>MUELACCELL</value>
+                <value>UETPTUE</value>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="Kistp1347_Cell5" class="ENodeBCellResource">
+        <property name="bandwidthDl" value="20000" />
+        <property name="bandwidthUl" value="20000" />
+        <property name="earfcnDl" value="1761" />
+        <property name="earfcnUl" value="19761" />
+        <property name="cellIdGroup" value="11" />
+        <property name="globalCellId" value="34" />
+        <property name="localCellId" value="5" />
+        <property name="subCellId" value="1" />
+        <property name="sectorNumber" value="5" />
+        <property name="carrierNumber" value="5" />
+        <property name="simulated" value="true" />
+        <property name="cellTagList">
+            <list>
+                <value>AEROFLEX_MUE</value>
+                <value>HOIT_INTRA_ORIG</value>
+                <value>CELL1</value>
+                <value>UETPTCELL</value>
+                <value>CELLTPTCELL</value>
+                <value>MUELACCELL</value>
+                <value>UETPTUE</value>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="Kistp1347_Cell6" class="ENodeBCellResource">
+        <property name="bandwidthDl" value="20000" />
+        <property name="bandwidthUl" value="20000" />
+        <property name="earfcnDl" value="2900" />
+        <property name="earfcnUl" value="20900" />
+        <property name="cellIdGroup" value="11" />
+        <property name="globalCellId" value="35" />
+        <property name="localCellId" value="6" />
+        <property name="subCellId" value="2" />
+        <property name="sectorNumber" value="6" />
+        <property name="carrierNumber" value="6" />
+        <property name="simulated" value="true" />
+        <property name="cellTagList">
+            <list>
+                <value>AEROFLEX_MUE</value>
+                <value>HOIT_INTRA_ORIG</value>
+                <value>CELL1</value>
+                <value>UETPTCELL</value>
+                <value>CELLTPTCELL</value>
+                <value>MUELACCELL</value>
+                <value>UETPTUE</value>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="Kistp1347_Cell7" class="ENodeBCellResource">
+        <property name="bandwidthDl" value="20000" />
+        <property name="bandwidthUl" value="20000" />
+        <property name="earfcnDl" value="1450" />
+        <property name="earfcnUl" value="19450" />
+        <property name="cellIdGroup" value="12" />
+        <property name="globalCellId" value="36" />
+        <property name="localCellId" value="7" />
+        <property name="subCellId" value="0" />
+        <property name="sectorNumber" value="7" />
+        <property name="carrierNumber" value="7" />
+        <property name="simulated" value="true" />
+        <property name="cellTagList">
+            <list>
+                <value>AEROFLEX_MUE</value>
+                <value>HOIT_INTRA_ORIG</value>
+                <value>CELL1</value>
+                <value>UETPTCELL</value>
+                <value>CELLTPTCELL</value>
+                <value>MUELACCELL</value>
+                <value>UETPTUE</value>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="Kistp1347_Cell8" class="ENodeBCellResource">
+        <property name="bandwidthDl" value="20000" />
+        <property name="bandwidthUl" value="20000" />
+        <property name="earfcnDl" value="1450" />
+        <property name="earfcnUl" value="19450" />
+        <property name="cellIdGroup" value="12" />
+        <property name="globalCellId" value="37" />
+        <property name="localCellId" value="8" />
+        <property name="subCellId" value="1" />
+        <property name="sectorNumber" value="8" />
+        <property name="carrierNumber" value="8" />
+        <property name="simulated" value="true" />
+        <property name="cellTagList">
+            <list>
+                <value>AEROFLEX_MUE</value>
+                <value>HOIT_INTRA_ORIG</value>
+                <value>CELL1</value>
+                <value>UETPTCELL</value>
+                <value>CELLTPTCELL</value>
+                <value>MUELACCELL</value>
+                <value>UETPTUE</value>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="Kistp1347_Cell9" class="ENodeBCellResource">
+        <property name="bandwidthDl" value="20000" />
+        <property name="bandwidthUl" value="20000" />
+        <property name="earfcnDl" value="2800" />
+        <property name="earfcnUl" value="20800" />
+        <property name="cellIdGroup" value="12" />
+        <property name="globalCellId" value="38" />
+        <property name="localCellId" value="9" />
+        <property name="subCellId" value="2" />
+        <property name="sectorNumber" value="9" />
+        <property name="carrierNumber" value="9" />
+        <property name="simulated" value="true" />
+        <property name="cellTagList">
+            <list>
+                <value>AEROFLEX_MUE</value>
+                <value>HOIT_INTRA_ORIG</value>
+                <value>CELL1</value>
+                <value>UETPTCELL</value>
+                <value>CELLTPTCELL</value>
+                <value>MUELACCELL</value>
+                <value>UETPTUE</value>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="Kistp1347_Cell10" class="ENodeBCellResource">
+        <property name="bandwidthDl" value="20000" />
+        <property name="bandwidthUl" value="20000" />
+        <property name="earfcnDl" value="1450" />
+        <property name="earfcnUl" value="19450" />
+        <property name="cellIdGroup" value="13" />
+        <property name="globalCellId" value="39" />
+        <property name="localCellId" value="10" />
+        <property name="subCellId" value="0" />
+        <property name="sectorNumber" value="10" />
+        <property name="carrierNumber" value="10" />
+        <property name="simulated" value="true" />
+        <property name="cellTagList">
+            <list>
+                <value>AEROFLEX_MUE</value>
+                <value>HOIT_INTRA_ORIG</value>
+                <value>CELL1</value>
+                <value>UETPTCELL</value>
+                <value>CELLTPTCELL</value>
+                <value>MUELACCELL</value>
+                <value>UETPTUE</value>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="Kistp1347_Cell11" class="ENodeBCellResource">
+        <property name="bandwidthDl" value="20000" />
+        <property name="bandwidthUl" value="20000" />
+        <property name="earfcnDl" value="1561" />
+        <property name="earfcnUl" value="19561" />
+        <property name="cellIdGroup" value="13" />
+        <property name="globalCellId" value="40" />
+        <property name="localCellId" value="11" />
+        <property name="subCellId" value="1" />
+        <property name="sectorNumber" value="11" />
+        <property name="carrierNumber" value="11" />
+        <property name="simulated" value="true" />
+        <property name="cellTagList">
+            <list>
+                <value>AEROFLEX_MUE</value>
+                <value>HOIT_INTRA_ORIG</value>
+                <value>CELL1</value>
+                <value>UETPTCELL</value>
+                <value>CELLTPTCELL</value>
+                <value>MUELACCELL</value>
+                <value>UETPTUE</value>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="Kistp1347_Cell12" class="ENodeBCellResource">
+        <property name="bandwidthDl" value="20000" />
+        <property name="bandwidthUl" value="20000" />
+        <property name="earfcnDl" value="2900" />
+        <property name="earfcnUl" value="20900" />
+        <property name="cellIdGroup" value="13" />
+        <property name="globalCellId" value="41" />
+        <property name="localCellId" value="12" />
+        <property name="subCellId" value="2" />
+        <property name="sectorNumber" value="12" />
+        <property name="carrierNumber" value="12" />
+        <property name="simulated" value="true" />
+        <property name="cellTagList">
+            <list>
+                <value>AEROFLEX_MUE</value>
+                <value>HOIT_INTRA_ORIG</value>
+                <value>CELL1</value>
+                <value>UETPTCELL</value>
+                <value>CELLTPTCELL</value>
+                <value>MUELACCELL</value>
+                <value>UETPTUE</value>
+            </list>
+        </property>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </bean>
+
+   
+    <bean id="ylufte002" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.AbiscoResource">
+        <property name="host" value="137.58.141.34" />
+        <property name="linuxPassword" value="RoadR-14" />
+        <property name="linuxRegexPrompt" value="tssop@10.*" />
+        <property name="linuxUsername" value="localgratci" />
+
+        <property name="port" value="4051" />
+        <property name="trafficHost" value="10.62.38.202" />
+        <property name="tssHost" value="10.62.49.202" />
+        <property name="siuHost" value="10.67.101.57    " />
+        <property name="siuTgid" value="" />
+    </bean>
+    
+    <bean id="SubnetResource10.67.101.0" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.SubnetResource">
+    <property name="subnetAddress" value="10.67.101.0" />
+    <property name="subnetMask" value="255.255.255.0" />
+    <property name="subnetName" value="IPV4_1" />
+    <property name="vlanTag" value="0" />
+</bean>
+
+<bean id="ENodeBIpTransmissionConfigurationTass-LTE/IPipAccessHost" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.IpAddressResource">
+    <property name="ip" value="10.67.101.57" />
+    <property name="subnet" ref="SubnetResource10.67.101.0" />
+</bean>
+
+<bean id="SubnetResource10.67.64.0" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.SubnetResource">
+    <property name="subnetAddress" value="10.67.64.0" />
+    <property name="subnetMask" value="255.255.252.0" />
+    <property name="subnetName" value="YouLab_SiteLAN" />
+    <property name="vlanTag" value="1942" />
+</bean>
+
+<bean id="ENodeBIpTransmissionConfigurationTass-LTE/IP-ipHostLink" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.IpAddressResource">
+    <property name="ip" value="10.67.64.57" />
+    <property name="subnet" ref="SubnetResource10.67.64.0" />
+</bean>
+
+<bean id="ENodeBIpTransmissionConfigurationTass-LTE/IPprimaryIpSync" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.IpAddressResource">
+</bean>
+
+<bean id="ENodeBIpTransmissionConfigurationTass-LTE/IPsecondaryIpSync" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.IpAddressResource">
+</bean>
+
+<bean id="kistp1347-LTE/IP" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.BtsIpTransmissionConfigurationResource">
+    <property name="ipAccessHostEt" ref="ENodeBIpTransmissionConfigurationTass-LTE/IPipAccessHost" />
+    <property name="ipHostLink" ref="ENodeBIpTransmissionConfigurationTass-LTE/IP-ipHostLink" />
+    <property name="primaryIpSyncRef" ref="ENodeBIpTransmissionConfigurationTass-LTE/IPprimaryIpSync" />
+    <property name="secondaryIpSyncRef" ref="ENodeBIpTransmissionConfigurationTass-LTE/IPsecondaryIpSync" />
+</bean>
+
+<bean id="kistp1347-btsData" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.G2BtsDataResource">
+    <property name="ipTransmissionConfiguration" ref="kistp1347-LTE/IP" />
+</bean>
+
+<bean id="KIDUS1347_RIA" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="KIDUS1347" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="RIA" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="KIDUS1347_RIB" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="KIDUS1347" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="RIB" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="KIDUS1347_RIC" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="KIDUS1347" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="RIC" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="KIDUS1347_RID" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="KIDUS1347" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="RID" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="KIDUS1347_RIE" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="KIDUS1347" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="RIE" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="KIDUS1347_RIF" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="KIDUS1347" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="RIF" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="KIDUS1347_LMTA" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="KIDUS1347" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="LMTA" />
+    <property name="portType" value="RJ-45" />
+</bean>
+
+<bean id="KIDUS1347_LMTB" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="KIDUS1347" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="LMTB" />
+    <property name="portType" value="RJ-45" />
+</bean>
+
+<bean id="KIDUS1347_TNA" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="KIDUS1347" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="TNA" />
+    <property name="portType" value="RJ-45" />
+</bean>
+
+<bean id="KIDUS1347_TNB" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="KIDUS1347" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="TNB" />
+    <property name="portType" value="SFP" />
+</bean>
+
+<bean id="KIDUS1347_GPS" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="KIDUS1347" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="GPS" />
+    <property name="portType" value="RJ-45" />
+</bean>
+
+<bean id="KIDUS1347" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.LteDigitalUnitResource">
+    <property name="hardwareType" value="DUS" />
+    <property name="name" value="KIDUS1347" />
+    <property name="portResourceList">
+        <list>
+            <ref bean="KIDUS1347_RIA" />
+            <ref bean="KIDUS1347_RIB" />
+            <ref bean="KIDUS1347_RIC" />
+            <ref bean="KIDUS1347_RID" />
+            <ref bean="KIDUS1347_RIE" />
+            <ref bean="KIDUS1347_RIF" />
+            <ref bean="KIDUS1347_LMTA" />
+            <ref bean="KIDUS1347_LMTB" />
+            <ref bean="KIDUS1347_TNA" />
+            <ref bean="KIDUS1347_TNB" />
+            <ref bean="KIDUS1347_GPS" />
+        </list>
+    </property>
+    <property name="version" value="DUS 5216" />
+</bean>
+
+<bean id="ENodeBIpTransmissionConfigurationTass-LTE/IP" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.ENodeBIpTransmissionConfigurationResource">
+    <property name="ipAccessHostEt" ref="ENodeBIpTransmissionConfigurationTass-LTE/IPipAccessHost" />
+    <property name="ipHostLink" ref="ENodeBIpTransmissionConfigurationTass-LTE/IP-ipHostLink" />
+    <property name="primaryIpSyncRef" ref="ENodeBIpTransmissionConfigurationTass-LTE/IPprimaryIpSync" />
+    <property name="secondaryIpSyncRef" ref="ENodeBIpTransmissionConfigurationTass-LTE/IPsecondaryIpSync" />
+</bean>
+
+<bean id="Kista_House10" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.SiteResource">
+    <property name="licenseServerHost" value="" />
+    <property name="licenseServerUrl" value="" />
+    <property name="name" value="Kista_House10" />
+    <property name="primaryNtpHost" value="10.67.5.10" />
+    <property name="recommendedLogPath" value="/proj/pdurbsiov/logs/JCAT_MS_RBS" />
+    <property name="schedulerUrl" value="http://rbs-tass.rnd.ki.sw.ericsson.se" />
+    <property name="secondaryNtpHost" value="10.67.4.10" />
+</bean>
+
+</beans>  

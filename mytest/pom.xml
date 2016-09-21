@@ -6,12 +6,15 @@
   <artifactId>mytest</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
-
   <name>mytest</name>
   <url>http://maven.apache.org</url>
-
-  <properties>
+ 
+  <properties>    
+    <jcat.site.scp>scp://copyserver.rnd.ki.sw.ericsson.se/proj/webdocs/common-jcat-site/root/site</jcat.site.scp>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <sonar.checkstyle.generateXml>true</sonar.checkstyle.generateXml>
+    <sonar.pmd.generateXml>true</sonar.pmd.generateXml>
+    <mjeVersion>1.7.773</mjeVersion>
   </properties>
 
   <dependencies>
@@ -20,13 +23,25 @@
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
-    </dependency>
-    
-        <dependency>
+    </dependency>    
+       
+	<dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
       <version>6.9.10</version>
       <scope>provided</scope>
+    </dependency>
+    
+    <dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.17</version>
+    </dependency>
+    
+    <dependency>
+    <groupId>com.ericsson.msran.jcat</groupId>
+    <artifactId>msran-jcat-extension</artifactId>
+    <version>${mjeVersion}</version>
     </dependency>
     
   </dependencies>

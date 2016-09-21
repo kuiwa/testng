@@ -1,0 +1,1332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+    xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans">
+
+<bean id="BEIJING0002" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.StpResource">
+    <property name="g2RbsList">
+        <list>
+            <ref bean="sebjitrbs0002_node" />
+        </list>
+    </property>
+    <property name="abiscoList">
+        <list>
+            <ref bean="sebjitrbs0002_Abisco" />
+        </list>
+    </property>
+    <property name="rncSimList">
+        <list>
+            <ref bean="sebjitrbs0002_RNCSim" />
+        </list>
+    </property>
+    <property name="site" value="CNBJ_MultiStd_lab" />
+    <property name="siteData" ref="CNBJ_MultiStd_lab" />
+    <property name="wea" ref="wea_sebjitrbs0002"/>
+    <property name="vectorSignalGeneratorList">
+        <list>
+            <ref bean="sebjitrbs0002_VSG" />
+        </list>
+    </property>
+    <property name="enmtgList">
+        <list>
+            <ref bean="sebjitrbs0002_enmtg" />
+        </list>
+    </property>
+</bean>
+
+<bean id="sebjitrbs0002_node" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.G2RbsResource">
+    <property name="name" value="sebjitrbs0002_node" />
+    <property name="nodeBData" ref="sebjitrbs0002_node-nodeBData" />
+<!--    <property name="btsData" ref="sebjitrbs0002_node-BtsData" /> -->
+    <property name="host" value="10.163.156.12" />
+    <property name="Username" value="muser" />
+    <property name="Password" value="muser" />
+    <property name="netconfPort" value="2022" />
+    <property name="netconfUsername" value="muser" />
+    <property name="netconfPassword" value="muser" />
+    <property name="coliPort" value="4192" />
+    <property name="coliRegexPrompt" value="\[\/\]-&gt;" />
+<!--     <property name="coliRegexPrompt" value="coli(.\[\/\]-)?>" /> -->
+    <property name="coliUsername" value="muser" />
+    <property name="coliPassword" value="muser" /> 
+    <property name="comCliPort" value="2023" />
+    <property name="comCliUsername" value="muser" />
+    <property name="comCliPassword" value="muser" />
+    <property name="comCliRegexPrompt" value=".*>" /> 
+    <property name="linuxPort" value="22" />
+    <property name="linuxUsername" value="root" />
+    <property name="linuxPassword" value="root" />
+    <property name="linuxRegexPrompt" value=":~#" />
+    <property name="linuxShellAvailable" value="true" />
+<!--     <property name="linuxRegexPrompt" value="\S+@\S+:\S+#" /> -->
+    <property name="digitalUnits">
+        <list>
+            <ref bean="sebjdus0002" />
+        </list>
+    </property>
+    <property name="cabinet" ref="sebjitrbs0002_cabinet" />
+    <property name="msrbsUserEquipmentSim">
+        <list>
+            <ref bean="BJLMRUESIM1" />
+            <ref bean="BJLMRUESIM1" />
+            <ref bean="BJLMRUESIM1" />
+            <ref bean="BJLMRUESIM1" />
+            <ref bean="BJLMRUESIM1" />
+            <ref bean="BJLMRUESIM1" />
+        </list>
+    </property>
+    <property name="radioUnits">
+        <list>
+            <ref bean="sebjitrbs0002_ru1" />
+            <ref bean="sebjitrbs0002_ru2" />
+            <ref bean="sebjitrbs0002_ru3" />
+            <ref bean="sebjitrbs0002_ru4" />
+            <ref bean="sebjitrbs0002_ru5" />
+            <ref bean="sebjitrbs0002_ru6" />
+        </list>
+    </property>
+    <property name="simulated" value="false" />
+</bean>
+
+<bean id="wea_sebjitrbs0002" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.WeaResource">
+    <property name="portNumber" value="12802"/>
+    <property name="socketReadTimeout" value="1800"/>
+    <property name="useScheduler" value="false"/>
+    <property name="niteTimeout" value="300"/>
+    <property name="dependence" value="true" />
+</bean>
+
+<bean id="sebjitrbs0002_Abisco" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.AbiscoResource">
+    <property name="host" value="10.163.174.249" />
+    <property name="linuxPassword" value="123456" />
+    <property name="linuxRegexPrompt" value="tssop@10.*" />
+    <property name="linuxUsername" value="xe" />
+    <property name="port" value="4051" />
+    <property name="trafficHost" value="10.163.174.33" />
+    <property name="tssHost" value="10.163.175.123" />
+    <property name="siuHost" value="10.163.155.67" />
+    <property name="siuTgid" value="" />
+</bean>
+
+<bean id="sebjitrbs0002_enmtg" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.EnmtgResource">
+    <property name="extraParameters" value="" />
+    <property name="logPath" value="" />
+    <property name="timeout" value="3700000" />
+    <property name="traffStatPath" value="" />
+    <property name="erncSimHost" value="10.163.158.223" />
+    <property name="parameterFilePath" value="/proj/wcdmaiov/MSME_BASIC/inifiles/bjcn1001/MY_NMTG_bjcn1001.ini" />
+    <property name="trafficFilePath" value="/proj/wcdmaiov/MSME_BASIC/pgfile/CtPl_3x4_1641ue_2_2h_R1L/pg000000" />
+</bean>
+
+<bean id="sebjdus0002_RIA" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjdus0002" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="RIA" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="sebjdus0002_RIB" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjdus0002" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="RIB" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="sebjdus0002_RIC" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjdus0002" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="RIC" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="sebjdus0002_RID" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjdus0002" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="RID" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="sebjdus0002_RIE" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjdus0002" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="RIE" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="sebjdus0002_RIF" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjdus0002" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="RIF" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="sebjdus0002_LMTA" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjdus0002" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="LMTA" />
+    <property name="portType" value="RJ-45" />
+</bean>
+
+<bean id="sebjdus0002_LMTB" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjdus0002" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="LMTB" />
+    <property name="portType" value="RJ-45" />
+</bean>
+
+<bean id="sebjdus0002_TNA" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjdus0002" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="TNA" />
+    <property name="portType" value="RJ-45" />
+</bean>
+
+<bean id="sebjdus0002_TNB" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjdus0002" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="TNB" />
+    <property name="portType" value="SFP" />
+</bean>
+
+<bean id="sebjdus0002_GPS" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjdus0002" />
+    <property name="equipmentType" value="Du" />
+    <property name="portName" value="GPS" />
+    <property name="portType" value="RJ-45" />
+</bean>
+
+<bean id="sebjdus0002" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.DigitalUnitResource">
+    <property name="hardwareType" value="DUS" />
+    <property name="name" value="sebjdus0002" />
+    <property name="portResourceList">
+        <list>
+            <ref bean="sebjdus0002_RIA" />
+            <ref bean="sebjdus0002_RIB" />
+            <ref bean="sebjdus0002_RIC" />
+            <ref bean="sebjdus0002_RID" />
+            <ref bean="sebjdus0002_RIE" />
+            <ref bean="sebjdus0002_RIF" />
+            <ref bean="sebjdus0002_LMTA" />
+            <ref bean="sebjdus0002_LMTB" />
+            <ref bean="sebjdus0002_TNA" />
+            <ref bean="sebjdus0002_TNB" />
+            <ref bean="sebjdus0002_GPS" />
+        </list>
+    </property>
+    <property name="version" value="DUS 52 01" />
+    <property name="serialNumber" value="D16S837075" />
+</bean>
+
+<bean id="sebjitrbs0002_cabinet" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.CabinetResource">
+    <property name="cabinetType" value="6201" />
+    <property name="digitalUnits">
+        <list>
+            <ref bean="sebjdus0002" />
+        </list>
+    </property>
+    <property name="sauConfigured" value="false" />
+    <property name="xalmConfigured" value="false" />
+</bean>
+
+<bean id="MDL_BJLMR" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.MdlResource">
+    <property name="unixLogPath" value="" />
+</bean>
+
+<bean id="BJLMRUESIM1" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.MsrbsUserEquipmentSimResource">
+    <property name="host" value="10.163.158.232" />
+    <property name="mdls">
+        <list>
+            <ref bean="MDL_BJLMR" />
+        </list>
+    </property>
+    <property name="ueSimType" value="TM500C" />
+</bean>
+
+<bean id="sebjitrbs0002_node-S1C1" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBCellResource">
+    <property name="baseBandPool" value="1" />
+    <property name="carrierNumber" value="1" />
+    <property name="cellRange" value="35000" />
+    <property name="globalCellId" value="" />
+    <property name="localCellId" value="1" />
+    <property name="numTxBranches" value="1" />
+    <property name="scramblingCode" value="191" />
+    <property name="sectorNumber" value="1" />
+    <property name="uarfcn" value="9725" />
+</bean>
+
+<bean id="sebjitrbs0002_node-S1C2" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBCellResource">
+    <property name="baseBandPool" value="1" />
+    <property name="carrierNumber" value="2" />
+    <property name="cellRange" value="35000" />
+    <property name="globalCellId" value="" />
+    <property name="localCellId" value="2" />
+    <property name="numTxBranches" value="1" />
+    <property name="scramblingCode" value="194" />
+    <property name="sectorNumber" value="1" />
+    <property name="uarfcn" value="9750" />
+</bean>
+
+<bean id="sebjitrbs0002_node-S1C3" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBCellResource">
+    <property name="baseBandPool" value="1" />
+    <property name="carrierNumber" value="3" />
+    <property name="cellRange" value="35000" />
+    <property name="globalCellId" value="" />
+    <property name="localCellId" value="7" />
+    <property name="numTxBranches" value="1" />
+    <property name="scramblingCode" value="197" />
+    <property name="sectorNumber" value="1" />
+    <property name="uarfcn" value="9750" />
+</bean>
+
+<bean id="sebjitrbs0002_node-S1C4" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBCellResource">
+    <property name="baseBandPool" value="1" />
+    <property name="carrierNumber" value="4" />
+    <property name="cellRange" value="35000" />
+    <property name="globalCellId" value="" />
+    <property name="localCellId" value="10" />
+    <property name="numTxBranches" value="1" />
+    <property name="scramblingCode" value="200" />
+    <property name="sectorNumber" value="1" />
+    <property name="uarfcn" value="9775" />
+</bean>
+
+<bean id="sebjitrbs0002_node-S2C1" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBCellResource">
+    <property name="baseBandPool" value="1" />
+    <property name="carrierNumber" value="1" />
+    <property name="cellRange" value="35000" />
+    <property name="globalCellId" value="" />
+    <property name="localCellId" value="3" />
+    <property name="numTxBranches" value="1" />
+    <property name="scramblingCode" value="192" />
+    <property name="sectorNumber" value="2" />
+    <property name="uarfcn" value="9725" />
+</bean>
+
+<bean id="sebjitrbs0002_node-S2C2" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBCellResource">
+    <property name="baseBandPool" value="1" />
+    <property name="carrierNumber" value="2" />
+    <property name="cellRange" value="35000" />
+    <property name="globalCellId" value="" />
+    <property name="localCellId" value="4" />
+    <property name="numTxBranches" value="1" />
+    <property name="scramblingCode" value="195" />
+    <property name="sectorNumber" value="2" />
+    <property name="uarfcn" value="9750" />
+</bean>
+
+<bean id="sebjitrbs0002_node-S2C3" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBCellResource">
+    <property name="baseBandPool" value="1" />
+    <property name="carrierNumber" value="3" />
+    <property name="cellRange" value="35000" />
+    <property name="globalCellId" value="" />
+    <property name="localCellId" value="8" />
+    <property name="numTxBranches" value="1" />
+    <property name="scramblingCode" value="198" />
+    <property name="sectorNumber" value="2" />
+    <property name="uarfcn" value="9750" />
+</bean>
+
+<bean id="sebjitrbs0002_node-S2C4" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBCellResource">
+    <property name="baseBandPool" value="1" />
+    <property name="carrierNumber" value="4" />
+    <property name="cellRange" value="35000" />
+    <property name="globalCellId" value="" />
+    <property name="localCellId" value="11" />
+    <property name="numTxBranches" value="1" />
+    <property name="scramblingCode" value="201" />
+    <property name="sectorNumber" value="2" />
+    <property name="uarfcn" value="9775" />
+</bean>
+
+<bean id="sebjitrbs0002_node-S3C1" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBCellResource">
+    <property name="baseBandPool" value="1" />
+    <property name="carrierNumber" value="1" />
+    <property name="cellRange" value="35000" />
+    <property name="globalCellId" value="" />
+    <property name="localCellId" value="5" />
+    <property name="numTxBranches" value="1" />
+    <property name="scramblingCode" value="193" />
+    <property name="sectorNumber" value="3" />
+    <property name="uarfcn" value="9725" />
+</bean>
+
+<bean id="sebjitrbs0002_node-S3C2" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBCellResource">
+    <property name="baseBandPool" value="1" />
+    <property name="carrierNumber" value="2" />
+    <property name="cellRange" value="35000" />
+    <property name="globalCellId" value="" />
+    <property name="localCellId" value="6" />
+    <property name="numTxBranches" value="1" />
+    <property name="scramblingCode" value="196" />
+    <property name="sectorNumber" value="3" />
+    <property name="uarfcn" value="9750" />
+</bean>
+
+<bean id="sebjitrbs0002_node-S3C3" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBCellResource">
+    <property name="baseBandPool" value="1" />
+    <property name="carrierNumber" value="3" />
+    <property name="cellRange" value="35000" />
+    <property name="globalCellId" value="" />
+    <property name="localCellId" value="9" />
+    <property name="numTxBranches" value="1" />
+    <property name="scramblingCode" value="199" />
+    <property name="sectorNumber" value="3" />
+    <property name="uarfcn" value="9750" />
+</bean>
+
+<bean id="sebjitrbs0002_node-S3C4" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBCellResource">
+    <property name="baseBandPool" value="1" />
+    <property name="carrierNumber" value="4" />
+    <property name="cellRange" value="35000" />
+    <property name="globalCellId" value="" />
+    <property name="localCellId" value="12" />
+    <property name="numTxBranches" value="1" />
+    <property name="scramblingCode" value="202" />
+    <property name="sectorNumber" value="3" />
+    <property name="uarfcn" value="9775" />
+</bean>
+
+<bean id="28490393" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBSectorResource">
+    <property name="branches">
+        <list>
+            <value>A</value>
+            <value>B</value>
+        </list>
+    </property>
+    <property name="cells">
+        <list>
+            <ref bean="sebjitrbs0002_node-S1C1" />
+            <ref bean="sebjitrbs0002_node-S1C2" />
+            <ref bean="sebjitrbs0002_node-S1C3" />
+            <ref bean="sebjitrbs0002_node-S1C4" />
+        </list>
+    </property>
+    <property name="converterOffsetDl" value="0" />
+    <property name="converterOffsetUl" value="0" />
+    <property name="frequencyBand" value="2" />
+    <property name="manualUarfcnCalc" value="true" />
+    <property name="numberOfRus" value="1" />
+    <property name="powerWatt" value="20" />
+    <property name="radioBuildingBlock" value="RBB12_1A" />
+    <property name="retTypes">
+        <list>
+            <value>Unknown</value>
+        </list>
+    </property>
+    <property name="ruNames">
+        <list>
+            <value>sebjitrbs0002_ru1</value>
+        </list>
+    </property>
+    <property name="sectorNumber" value="1" />
+    <property name="sectorSequenceNumber" value="1" />
+    <property name="tmaTypes">
+        <list>
+            <value>NONE</value>
+        </list>
+    </property>
+</bean>
+
+<bean id="28490394" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBSectorResource">
+    <property name="branches">
+        <list>
+            <value>A</value>
+            <value>B</value>
+        </list>
+    </property>
+    <property name="cells">
+        <list>
+            <ref bean="sebjitrbs0002_node-S2C1" />
+            <ref bean="sebjitrbs0002_node-S2C2" />
+            <ref bean="sebjitrbs0002_node-S2C3" />
+            <ref bean="sebjitrbs0002_node-S2C4" />
+        </list>
+    </property>
+    <property name="converterOffsetDl" value="0" />
+    <property name="converterOffsetUl" value="0" />
+    <property name="frequencyBand" value="2" />
+    <property name="manualUarfcnCalc" value="true" />
+    <property name="numberOfRus" value="1" />
+    <property name="powerWatt" value="20" />
+    <property name="radioBuildingBlock" value="RBB12_1A" />
+    <property name="retTypes">
+        <list>
+            <value>Unknown</value>
+        </list>
+    </property>
+    <property name="ruNames">
+        <list>
+            <value>sebjitrbs0002_ru2</value>
+        </list>
+    </property>
+    <property name="sectorNumber" value="2" />
+    <property name="sectorSequenceNumber" value="1" />
+    <property name="tmaTypes">
+        <list>
+            <value>NONE</value>
+        </list>
+    </property>
+</bean>
+
+<bean id="28490395" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBSectorResource">
+    <property name="branches">
+        <list>
+            <value>A</value>
+            <value>B</value>
+        </list>
+    </property>
+    <property name="cells">
+        <list>
+            <ref bean="sebjitrbs0002_node-S3C1" />
+            <ref bean="sebjitrbs0002_node-S3C2" />
+            <ref bean="sebjitrbs0002_node-S3C3" />
+            <ref bean="sebjitrbs0002_node-S3C4" />
+        </list>
+    </property>
+    <property name="converterOffsetDl" value="0" />
+    <property name="converterOffsetUl" value="0" />
+    <property name="frequencyBand" value="2" />
+    <property name="manualUarfcnCalc" value="true" />
+    <property name="numberOfRus" value="1" />
+    <property name="powerWatt" value="20" />
+    <property name="radioBuildingBlock" value="RBB12_1A" />
+    <property name="retTypes">
+        <list>
+            <value>Unknown</value>
+        </list>
+    </property>
+    <property name="ruNames">
+        <list>
+            <value>sebjitrbs0002_ru3</value>
+        </list>
+    </property>
+    <property name="sectorNumber" value="3" />
+    <property name="sectorSequenceNumber" value="1" />
+    <property name="tmaTypes">
+        <list>
+            <value>NONE</value>
+        </list>
+    </property>
+</bean>
+
+<bean id="W-3X4" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBRadioConfigurationResource">
+    <property name="active" value="false" />
+    <property name="cells">
+        <list>
+            <ref bean="sebjitrbs0002_node-S1C1" />
+            <ref bean="sebjitrbs0002_node-S1C2" />
+            <ref bean="sebjitrbs0002_node-S1C3" />
+            <ref bean="sebjitrbs0002_node-S1C4" />
+            <ref bean="sebjitrbs0002_node-S2C1" />
+            <ref bean="sebjitrbs0002_node-S2C2" />
+            <ref bean="sebjitrbs0002_node-S2C3" />
+            <ref bean="sebjitrbs0002_node-S2C4" />
+            <ref bean="sebjitrbs0002_node-S3C1" />
+            <ref bean="sebjitrbs0002_node-S3C2" />
+            <ref bean="sebjitrbs0002_node-S3C3" />
+            <ref bean="sebjitrbs0002_node-S3C4" />
+        </list>
+    </property>
+    <property name="name" value="W-3X4" />
+    <property name="sectors">
+        <list>
+            <ref bean="28490393" />
+            <ref bean="28490394" />
+            <ref bean="28490395" />
+        </list>
+    </property>
+</bean>
+
+<bean id="28490656" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBSectorResource">
+    <property name="numberOfRus" value="1" />
+    <property name="radioBuildingBlock" value="RBB12_1A" />
+    <property name="ruNames">
+        <list>
+            <value>sebjitrbs0002_ru4</value>
+        </list>
+    </property>
+    <property name="sectorNumber" value="1" />
+</bean>
+
+<bean id="28490657" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBSectorResource">
+    <property name="numberOfRus" value="1" />
+    <property name="radioBuildingBlock" value="RBB12_1A" />
+    <property name="ruNames">
+        <list>
+            <value>sebjitrbs0002_ru5</value>
+        </list>
+    </property>
+    <property name="sectorNumber" value="2" />
+</bean>
+
+<bean id="28490658" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBSectorResource">
+    <property name="numberOfRus" value="1" />
+    <property name="radioBuildingBlock" value="RBB12_1A" />
+    <property name="ruNames">
+        <list>
+            <value>sebjitrbs0002_ru6</value>
+        </list>
+    </property>
+    <property name="sectorNumber" value="3" />
+</bean>
+
+<bean id="G" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBRadioConfigurationResource">
+    <property name="active" value="false" />
+    <property name="name" value="G" />
+    <property name="sectors">
+        <list>
+            <ref bean="28490656" />
+            <ref bean="28490657" />
+            <ref bean="28490658" />
+        </list>
+    </property>
+</bean>
+
+<bean id="29388269" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBSectorResource">
+    <property name="branches">
+        <list>
+            <value>A</value>
+            <value>B</value>
+        </list>
+    </property>
+    <property name="cells">
+        <list>
+            <ref bean="sebjitrbs0002_node-S1C1" />
+            <ref bean="sebjitrbs0002_node-S1C2" />
+        </list>
+    </property>
+    <property name="converterOffsetDl" value="0" />
+    <property name="converterOffsetUl" value="0" />
+    <property name="frequencyBand" value="2" />
+    <property name="manualUarfcnCalc" value="true" />
+    <property name="numberOfRus" value="1" />
+    <property name="powerWatt" value="10" />
+    <property name="radioBuildingBlock" value="RBB12_1A" />
+    <property name="retTypes">
+        <list>
+            <value>Unknown</value>
+        </list>
+    </property>
+    <property name="ruNames">
+        <list>
+            <value>sebjitrbs0002_ru1</value>
+        </list>
+    </property>
+    <property name="sectorNumber" value="1" />
+    <property name="sectorSequenceNumber" value="1" />
+    <property name="tmaTypes">
+        <list>
+            <value>NONE</value>
+        </list>
+    </property>
+</bean>
+
+<bean id="29388276" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBSectorResource">
+    <property name="branches">
+        <list>
+            <value>A</value>
+            <value>B</value>
+        </list>
+    </property>
+    <property name="cells">
+        <list>
+            <ref bean="sebjitrbs0002_node-S2C1" />
+            <ref bean="sebjitrbs0002_node-S2C2" />
+        </list>
+    </property>
+    <property name="converterOffsetDl" value="0" />
+    <property name="converterOffsetUl" value="0" />
+    <property name="frequencyBand" value="2" />
+    <property name="manualUarfcnCalc" value="true" />
+    <property name="numberOfRus" value="1" />
+    <property name="powerWatt" value="10" />
+    <property name="radioBuildingBlock" value="RBB12_1A" />
+    <property name="retTypes">
+        <list>
+            <value>Unknown</value>
+        </list>
+    </property>
+    <property name="ruNames">
+        <list>
+            <value>sebjitrbs0002_ru2</value>
+        </list>
+    </property>
+    <property name="sectorNumber" value="2" />
+    <property name="sectorSequenceNumber" value="1" />
+    <property name="tmaTypes">
+        <list>
+            <value>NONE</value>
+        </list>
+    </property>
+</bean>
+
+<bean id="29388283" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBSectorResource">
+    <property name="branches">
+        <list>
+            <value>A</value>
+            <value>B</value>
+        </list>
+    </property>
+    <property name="cells">
+        <list>
+            <ref bean="sebjitrbs0002_node-S3C1" />
+            <ref bean="sebjitrbs0002_node-S3C2" />
+        </list>
+    </property>
+    <property name="converterOffsetDl" value="0" />
+    <property name="converterOffsetUl" value="0" />
+    <property name="frequencyBand" value="2" />
+    <property name="manualUarfcnCalc" value="true" />
+    <property name="numberOfRus" value="1" />
+    <property name="powerWatt" value="10" />
+    <property name="radioBuildingBlock" value="RBB12_1A" />
+    <property name="retTypes">
+        <list>
+            <value>Unknown</value>
+        </list>
+    </property>
+    <property name="ruNames">
+        <list>
+            <value>sebjitrbs0002_ru3</value>
+        </list>
+    </property>
+    <property name="sectorNumber" value="3" />
+    <property name="sectorSequenceNumber" value="1" />
+    <property name="tmaTypes">
+        <list>
+            <value>NONE</value>
+        </list>
+    </property>
+</bean>
+
+<bean id="W-3X2" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBRadioConfigurationResource">
+    <property name="active" value="true" />
+    <property name="cells">
+        <list>
+            <ref bean="sebjitrbs0002_node-S1C1" />
+            <ref bean="sebjitrbs0002_node-S1C2" />
+            <ref bean="sebjitrbs0002_node-S2C1" />
+            <ref bean="sebjitrbs0002_node-S2C2" />
+            <ref bean="sebjitrbs0002_node-S3C1" />
+            <ref bean="sebjitrbs0002_node-S3C2" />
+        </list>
+    </property>
+    <property name="name" value="W-3X2" />
+    <property name="sectors">
+        <list>
+            <ref bean="29388269" />
+            <ref bean="29388276" />
+            <ref bean="29388283" />
+        </list>
+    </property>
+</bean>
+
+<bean id="29388911" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBSectorResource">
+    <property name="numberOfRus" value="1" />
+    <property name="radioBuildingBlock" value="RBB12_1A" />
+    <property name="ruNames">
+        <list>
+            <value>sebjitrbs0002_ru4</value>
+        </list>
+    </property>
+    <property name="sectorNumber" value="1" />
+</bean>
+
+<bean id="29388912" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBSectorResource">
+    <property name="numberOfRus" value="1" />
+    <property name="radioBuildingBlock" value="RBB12_1A" />
+    <property name="ruNames">
+        <list>
+            <value>sebjitrbs0002_ru5</value>
+        </list>
+    </property>
+    <property name="sectorNumber" value="2" />
+</bean>
+
+<bean id="29388913" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBSectorResource">
+    <property name="numberOfRus" value="1" />
+    <property name="radioBuildingBlock" value="RBB12_1A" />
+    <property name="ruNames">
+        <list>
+            <value>sebjitrbs0002_ru6</value>
+        </list>
+    </property>
+    <property name="sectorNumber" value="3" />
+</bean>
+
+<bean id="G-12trx" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBRadioConfigurationResource">
+    <property name="active" value="true" />
+    <property name="name" value="G-12trx" />
+    <property name="sectors">
+        <list>
+            <ref bean="29388911" />
+            <ref bean="29388912" />
+            <ref bean="29388913" />
+        </list>
+    </property>
+</bean>
+
+<bean id="SubnetResource10.163.156.0" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.SubnetResource">
+    <property name="subnetAddress" value="10.163.156.0" />
+    <property name="subnetMask" value="255.255.255.0" />
+    <property name="subnetName" value="10-163-156" />
+    <property name="vlanTag" value="1000" />
+</bean>
+
+<bean id="sebjitrbs0002_node-ethernetLink" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.IpAddressResource">
+    <property name="ip" value="10.163.156.12" />
+    <property name="subnet" ref="SubnetResource10.163.156.0" />
+</bean>
+
+<bean id="SubnetResource10.163.159.0" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.SubnetResource">
+    <property name="subnetAddress" value="10.163.159.0" />
+    <property name="subnetMask" value="255.255.255.0" />
+    <property name="subnetName" value="10-163-159" />
+    <property name="vlanTag" value="1200" />
+</bean>
+
+<bean id="WCDMA/IPipAccessHostEt" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.IpAddressResource">
+    <property name="ip" value="10.163.159.43" />
+    <property name="subnet" ref="SubnetResource10.163.159.0" />
+</bean>
+
+<bean id="SubnetResource10.163.152.0" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.SubnetResource">
+    <property name="subnetAddress" value="10.163.152.0" />
+    <property name="subnetMask" value="255.255.255.0" />
+    <property name="subnetName" value="10-163-152" />
+    <property name="vlanTag" value="0" />
+</bean>
+
+<bean id="WCDMA/IPipHostLink" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.IpAddressResource">
+    <property name="ip" value="10.163.152.12" />
+    <property name="subnet" ref="SubnetResource10.163.152.0" />
+</bean>
+
+<bean id="SubnetResource10.163.255.0" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.SubnetResource">
+    <property name="subnetAddress" value="10.163.255.0" />
+    <property name="subnetMask" value="255.255.255.0" />
+    <property name="subnetName" value="10-163-255" />
+    <property name="vlanTag" value="0" />
+</bean>
+
+<bean id="WCDMA/IPprimaryIpSync" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.IpAddressResource">
+    <property name="ip" value="10.163.255.241" />
+    <property name="subnet" ref="SubnetResource10.163.255.0" />
+</bean>
+
+<bean id="WCDMA/IP" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.NodeBIpTransmissionConfiguration">
+    <property name="ipAccessHostEt" ref="WCDMA/IPipAccessHostEt" />
+    <property name="ipHostLink" ref="WCDMA/IPipHostLink" />
+    <property name="networkSync" value="true" />
+    <property name="port" value="1" />
+    <property name="primaryIpSyncRef" ref="WCDMA/IPprimaryIpSync" />
+</bean>
+
+<bean id="sebjitrbs0002_RNCSimipAccessAutoConfigSctpMax" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.IpAddressResource">
+    <property name="ip" value="10.163.159.45" />
+    <property name="subnet" ref="SubnetResource10.163.159.0" />
+</bean>
+
+<bean id="sebjitrbs0002_RNCSimipAccessAutoConfiSctpMin" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.IpAddressResource">
+    <property name="ip" value="10.163.159.44" />
+    <property name="subnet" ref="SubnetResource10.163.159.0" />
+</bean>
+
+<bean id="sebjitrbs0002_RNCSimipAccessAutoConfigUdpMax" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.IpAddressResource">
+    <property name="ip" value="10.163.159.64" />
+    <property name="subnet" ref="SubnetResource10.163.159.0" />
+</bean>
+
+<bean id="sebjitrbs0002_RNCSimipAccessAutoConfigUdpMin" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.IpAddressResource">
+    <property name="ip" value="10.163.159.46" />
+    <property name="subnet" ref="SubnetResource10.163.159.0" />
+</bean>
+
+<bean id="sebjitrbs0002_RNCSimntpAddress" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.IpAddressResource">
+    <property name="ip" value="10.163.255.241" />
+    <property name="subnet" ref="SubnetResource10.163.255.0" />
+</bean>
+
+<bean id="sebjitrbs0002_RNCSim" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.RncSimResource">
+    <property name="host" value="10.163.158.223" />
+    <property name="ipAccessAutoConfigSctpMax" ref="sebjitrbs0002_RNCSimipAccessAutoConfigSctpMax" />
+    <property name="ipAccessAutoConfigSctpMin" ref="sebjitrbs0002_RNCSimipAccessAutoConfiSctpMin" />
+    <property name="ipAccessAutoConfigUdpMax" ref="sebjitrbs0002_RNCSimipAccessAutoConfigUdpMax" />
+    <property name="ipAccessAutoConfigUdpMin" ref="sebjitrbs0002_RNCSimipAccessAutoConfigUdpMin" />
+    <property name="ntpAddress" ref="sebjitrbs0002_RNCSimntpAddress" />
+    <property name="slsPassword" value="******" />
+    <property name="slsUrls" value="" />
+    <property name="slsUser" value="" />
+    <property name="username" value="x" />
+    <property name="password" value="x" />
+</bean>
+
+<bean class="G2BtsDataResource" id="sebjitrbs0002_node-BtsData">
+</bean>
+    
+<bean id="sebjitrbs0002_node-nodeBData" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.G2NodeBDataResource">
+    <property name="alternativeRadioConfigurations">
+        <list>
+            <ref bean="W-3X4" />
+            <ref bean="G" />
+            <ref bean="W-3X2" />
+            <ref bean="G-12trx" />
+        </list>
+    </property>
+    <property name="cabinets">
+        <list>
+            <ref bean="sebjitrbs0002_cabinet" />
+        </list>
+    </property>
+    <property name="digitalBuildingBlock" value="Unknown" />
+    <property name="ethernetLink" ref="sebjitrbs0002_node-ethernetLink" />
+    <property name="ipTransmissionConfiguration" ref="WCDMA/IP" />
+    <property name="nodeLocation" value="BJ_MS_lab" />
+    <property name="rncSimList">
+        <list>
+            <ref bean="sebjitrbs0002_RNCSim" />
+        </list>
+    </property>
+    <property name="sectorCarrierToUeMap">
+        <map>
+            <entry key="S2C2">
+        <list>
+            <value>BJLMRUESIM1</value>
+        </list>
+            </entry>
+            <entry key="S3C2">
+        <list>
+            <value>BJLMRUESIM1</value>
+        </list>
+            </entry>
+            <entry key="S3C1">
+        <list>
+            <value>BJLMRUESIM1</value>
+        </list>
+            </entry>
+            <entry key="S2C1">
+        <list>
+            <value>BJLMRUESIM1</value>
+        </list>
+            </entry>
+            <entry key="S1C2">
+        <list>
+            <value>BJLMRUESIM1</value>
+        </list>
+            </entry>
+            <entry key="S1C1">
+        <list>
+            <value>BJLMRUESIM1</value>
+        </list>
+            </entry>
+        </map>
+    </property>
+</bean>
+
+<bean id="sebjitrbs0002_ru1_DATA1" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru1" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="DATA1" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="sebjitrbs0002_ru1_DATA2" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru1" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="DATA2" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="sebjitrbs0002_ru1_RFA" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru1" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RFA" />
+    <property name="portType" value="RF" />
+</bean>
+
+<bean id="sebjitrbs0002_ru1_RFB" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru1" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RFB" />
+    <property name="portType" value="RF" />
+</bean>
+
+<bean id="sebjitrbs0002_ru1_RXA_IO" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru1" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RXA_IO" />
+    <property name="portType" value="RX" />
+</bean>
+
+<bean id="sebjitrbs0002_ru1_RXA_OUT" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru1" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RXA_OUT" />
+    <property name="portType" value="RX" />
+</bean>
+
+<bean id="sebjitrbs0002_ru1_RXB_IO" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru1" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RXB_IO" />
+    <property name="portType" value="RX" />
+</bean>
+
+<bean id="sebjitrbs0002_ru1" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.RadioUnitResource">
+    <property name="equipmentPorts">
+        <list>
+            <ref bean="sebjitrbs0002_ru1_DATA1" />
+            <ref bean="sebjitrbs0002_ru1_DATA2" />
+            <ref bean="sebjitrbs0002_ru1_RFA" />
+            <ref bean="sebjitrbs0002_ru1_RFB" />
+            <ref bean="sebjitrbs0002_ru1_RXA_IO" />
+            <ref bean="sebjitrbs0002_ru1_RXA_OUT" />
+            <ref bean="sebjitrbs0002_ru1_RXB_IO" />
+        </list>
+    </property>
+    <property name="radioStandard" value="WCDMA" />
+</bean>
+
+<bean id="sebjitrbs0002_ru2_DATA1" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru2" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="DATA1" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="sebjitrbs0002_ru2_DATA2" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru2" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="DATA2" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="sebjitrbs0002_ru2_RFA" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru2" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RFA" />
+    <property name="portType" value="RF" />
+</bean>
+
+<bean id="sebjitrbs0002_ru2_RFB" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru2" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RFB" />
+    <property name="portType" value="RF" />
+</bean>
+
+<bean id="sebjitrbs0002_ru2_RXA_IO" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru2" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RXA_IO" />
+    <property name="portType" value="RX" />
+</bean>
+
+<bean id="sebjitrbs0002_ru2_RXA_OUT" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru2" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RXA_OUT" />
+    <property name="portType" value="RX" />
+</bean>
+
+<bean id="sebjitrbs0002_ru2_RXB_IO" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru2" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RXB_IO" />
+    <property name="portType" value="RX" />
+</bean>
+
+<bean id="sebjitrbs0002_ru2" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.RadioUnitResource">
+    <property name="equipmentPorts">
+        <list>
+            <ref bean="sebjitrbs0002_ru2_DATA1" />
+            <ref bean="sebjitrbs0002_ru2_DATA2" />
+            <ref bean="sebjitrbs0002_ru2_RFA" />
+            <ref bean="sebjitrbs0002_ru2_RFB" />
+            <ref bean="sebjitrbs0002_ru2_RXA_IO" />
+            <ref bean="sebjitrbs0002_ru2_RXA_OUT" />
+            <ref bean="sebjitrbs0002_ru2_RXB_IO" />
+        </list>
+    </property>
+    <property name="radioStandard" value="WCDMA" />
+</bean>
+
+<bean id="sebjitrbs0002_ru3_DATA1" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru3" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="DATA1" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="sebjitrbs0002_ru3_DATA2" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru3" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="DATA2" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="sebjitrbs0002_ru3_RFA" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru3" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RFA" />
+    <property name="portType" value="RF" />
+</bean>
+
+<bean id="sebjitrbs0002_ru3_RFB" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru3" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RFB" />
+    <property name="portType" value="RF" />
+</bean>
+
+<bean id="sebjitrbs0002_ru3_RXA_IO" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru3" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RXA_IO" />
+    <property name="portType" value="RX" />
+</bean>
+
+<bean id="sebjitrbs0002_ru3_RXA_OUT" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru3" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RXA_OUT" />
+    <property name="portType" value="RX" />
+</bean>
+
+<bean id="sebjitrbs0002_ru3_RXB_IO" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru3" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RXB_IO" />
+    <property name="portType" value="RX" />
+</bean>
+
+<bean id="sebjitrbs0002_ru3" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.RadioUnitResource">
+    <property name="equipmentPorts">
+        <list>
+            <ref bean="sebjitrbs0002_ru3_DATA1" />
+            <ref bean="sebjitrbs0002_ru3_DATA2" />
+            <ref bean="sebjitrbs0002_ru3_RFA" />
+            <ref bean="sebjitrbs0002_ru3_RFB" />
+            <ref bean="sebjitrbs0002_ru3_RXA_IO" />
+            <ref bean="sebjitrbs0002_ru3_RXA_OUT" />
+            <ref bean="sebjitrbs0002_ru3_RXB_IO" />
+        </list>
+    </property>
+    <property name="radioStandard" value="WCDMA" />
+</bean>
+
+<bean id="sebjitrbs0002_ru4_DATA1" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru4" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="DATA1" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="sebjitrbs0002_ru4_DATA2" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru4" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="DATA2" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="sebjitrbs0002_ru4_RFA" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru4" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RFA" />
+    <property name="portType" value="RF" />
+</bean>
+
+<bean id="sebjitrbs0002_ru4_RFB" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru4" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RFB" />
+    <property name="portType" value="RF" />
+</bean>
+
+<bean id="sebjitrbs0002_ru4_RXA_IO" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru4" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RXA_IO" />
+    <property name="portType" value="RX" />
+</bean>
+
+<bean id="sebjitrbs0002_ru4_RXA_OUT" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru4" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RXA_OUT" />
+    <property name="portType" value="RX" />
+</bean>
+
+<bean id="sebjitrbs0002_ru4_RXB_IO" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru4" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RXB_IO" />
+    <property name="portType" value="RX" />
+</bean>
+
+<bean id="sebjitrbs0002_ru4" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.RadioUnitResource">
+    <property name="equipmentPorts">
+        <list>
+            <ref bean="sebjitrbs0002_ru4_DATA1" />
+            <ref bean="sebjitrbs0002_ru4_DATA2" />
+            <ref bean="sebjitrbs0002_ru4_RFA" />
+            <ref bean="sebjitrbs0002_ru4_RFB" />
+            <ref bean="sebjitrbs0002_ru4_RXA_IO" />
+            <ref bean="sebjitrbs0002_ru4_RXA_OUT" />
+            <ref bean="sebjitrbs0002_ru4_RXB_IO" />
+        </list>
+    </property>
+    <property name="radioStandard" value="GSM" />
+</bean>
+
+<bean id="sebjitrbs0002_ru5_DATA1" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru5" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="DATA1" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="sebjitrbs0002_ru5_DATA2" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru5" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="DATA2" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="sebjitrbs0002_ru5_RFA" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru5" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RFA" />
+    <property name="portType" value="RF" />
+</bean>
+
+<bean id="sebjitrbs0002_ru5_RFB" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru5" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RFB" />
+    <property name="portType" value="RF" />
+</bean>
+
+<bean id="sebjitrbs0002_ru5_RXA_IO" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru5" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RXA_IO" />
+    <property name="portType" value="RX" />
+</bean>
+
+<bean id="sebjitrbs0002_ru5_RXA_OUT" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru5" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RXA_OUT" />
+    <property name="portType" value="RX" />
+</bean>
+
+<bean id="sebjitrbs0002_ru5_RXB_IO" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru5" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RXB_IO" />
+    <property name="portType" value="RX" />
+</bean>
+
+<bean id="sebjitrbs0002_ru5" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.RadioUnitResource">
+    <property name="equipmentPorts">
+        <list>
+            <ref bean="sebjitrbs0002_ru5_DATA1" />
+            <ref bean="sebjitrbs0002_ru5_DATA2" />
+            <ref bean="sebjitrbs0002_ru5_RFA" />
+            <ref bean="sebjitrbs0002_ru5_RFB" />
+            <ref bean="sebjitrbs0002_ru5_RXA_IO" />
+            <ref bean="sebjitrbs0002_ru5_RXA_OUT" />
+            <ref bean="sebjitrbs0002_ru5_RXB_IO" />
+        </list>
+    </property>
+    <property name="radioStandard" value="GSM" />
+</bean>
+
+<bean id="sebjitrbs0002_ru6_DATA1" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru6" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="DATA1" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="sebjitrbs0002_ru6_DATA2" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru6" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="DATA2" />
+    <property name="portType" value="CPRI" />
+</bean>
+
+<bean id="sebjitrbs0002_ru6_RFA" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru6" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RFA" />
+    <property name="portType" value="RF" />
+</bean>
+
+<bean id="sebjitrbs0002_ru6_RFB" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru6" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RFB" />
+    <property name="portType" value="RF" />
+</bean>
+
+<bean id="sebjitrbs0002_ru6_RXA_IO" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru6" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RXA_IO" />
+    <property name="portType" value="RX" />
+</bean>
+
+<bean id="sebjitrbs0002_ru6_RXA_OUT" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru6" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RXA_OUT" />
+    <property name="portType" value="RX" />
+</bean>
+
+<bean id="sebjitrbs0002_ru6_RXB_IO" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.PortResource">
+    <property name="equipmentName" value="sebjitrbs0002_ru6" />
+    <property name="equipmentType" value="Ru" />
+    <property name="portName" value="RXB_IO" />
+    <property name="portType" value="RX" />
+</bean>
+
+<bean id="sebjitrbs0002_ru6" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.RadioUnitResource">
+    <property name="equipmentPorts">
+        <list>
+            <ref bean="sebjitrbs0002_ru6_DATA1" />
+            <ref bean="sebjitrbs0002_ru6_DATA2" />
+            <ref bean="sebjitrbs0002_ru6_RFA" />
+            <ref bean="sebjitrbs0002_ru6_RFB" />
+            <ref bean="sebjitrbs0002_ru6_RXA_IO" />
+            <ref bean="sebjitrbs0002_ru6_RXA_OUT" />
+            <ref bean="sebjitrbs0002_ru6_RXB_IO" />
+        </list>
+    </property>
+    <property name="radioStandard" value="GSM" />
+</bean>
+
+<bean id="CNBJ_MultiStd_lab" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.SiteResource">
+    <property name="licenseServerHost" value="" />
+    <property name="licenseServerUrl" value="" />
+    <property name="name" value="CNBJ_MultiStd_lab" />
+</bean>
+
+<bean id="sebjitrbs0002_VSG" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.VectorSignalGeneratorResource">
+<!--    <property name="arbExternalTrigger" value="true" /> -->
+<!--    <property name="arbExternalTriggerDelay" value="10339" /> -->
+<!--    <property name="arbExternalTriggerSlope" value="POS" /> -->
+<!--    <property name="arbSampleClockRate" value="26880000" /> -->
+<!--    <property name="basebandFrequencyOffset" value="0.1" /> -->
+<!--    <property name="frequency" value="0.0" /> -->
+<!--    <property name="ftpPort" value="21" /> -->
+    <property name="generatorType" value="Agilent N5172B" />
+    <property name="host" value="10.163.158.222" />
+<!--    <property name="powerLevel" value="0.0" /> -->
+    <property name="password" value="agilent" />
+    <property name="username" value="user" />
+</bean>
+
+</beans>

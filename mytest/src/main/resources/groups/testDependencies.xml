@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="testNgSuite" >
+    <test name="Test dependencies" >
+        <groups>
+            <run>
+                <include name="group7" />
+            </run>
+            <dependencies>
+                <group name="group5" depends-on="group2 group4" />
+                <group name="group7" depends-on="group5 group6" />
+            </dependencies>
+        </groups>
+        
+        <classes>
+            <class name="testng.groups.MyTestB" />
+        </classes>
+    </test>
+</suite>

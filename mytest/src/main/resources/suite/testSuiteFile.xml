@@ -1,0 +1,7 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="testNgSuite-test suite-files" >
+    <suite-files>
+        <suite-file path="../dataProvider/testBean.xml" />
+        <suite-file path="../listeners/testListeners.xml" />
+    </suite-files>
+</suite>

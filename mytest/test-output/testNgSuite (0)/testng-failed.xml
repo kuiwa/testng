@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [testNgSuite (0)]">
+  <listeners>
+    <listener class-name="testng.listener.TmpSuiteListener"/>
+  </listeners>
+  <test name="Test dependencies">
+    <groups>
+      <run>
+        <include name="group7"/>
+      </run>
+      <dependencies>
+        <group depends-on="group5 group6" name="group7"/>
+        <group depends-on="group2 group4" name="group5"/>
+      </dependencies>
+    </groups>
+    <classes>
+      <class name="testng.groups.MyTestB"/>
+    </classes>
+  </test> <!-- Test dependencies -->
+</suite> <!-- Failed suite [testNgSuite (0)] -->

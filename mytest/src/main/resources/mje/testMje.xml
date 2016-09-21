@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="mjeSuite" >
+    <listeners>
+<!--         <listener class-name="testng.listener.TmpSuiteListener" /> -->
+        <listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+    </listeners>
+    
+    <test name="Test Mje" >
+        <classes>
+            <class name="mje.MjeTest" />
+        </classes>
+    </test>
+</suite>
